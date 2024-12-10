@@ -1,0 +1,58 @@
+.todo {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper input {
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: bisque;
+}
+
+.wrapper button {
+    margin-left: 30px;
+    padding: 5px 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(168, 115, 50, 0.4);
+    transition: background-color 0.15s ease;
+    color: beige;
+    cursor: pointer;
+}
+
+.wrapper button:active {
+    background-color: rgba(168, 115, 50, 1); 
+}
+
+.wrapper ul {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrapper li {
+    list-style: none;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    word-break: break-word;
+}
+

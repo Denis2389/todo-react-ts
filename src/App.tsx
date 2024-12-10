@@ -1,12 +1,12 @@
-import ListGroup from "./components/ListGroup"
+import TodoList from "./components/TodoList/TodoList";
+import './App.css'
 
 const App = () => {
-  const items = ["New York", "San Francisko", "Tokyo", "London", "Paris"];
 
 
   return (
     <div>
-      <ListGroup items={items} heading="Cities"/>
+      <TodoList />
     </div>
   );
 }
