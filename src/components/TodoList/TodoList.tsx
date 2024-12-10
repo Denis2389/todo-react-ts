@@ -59,7 +59,11 @@ const handleKeyDows = (e: React.KeyboardEvent<HTMLInputElement>) => {
           </button>
 
           <ul>
-            <TodoItem todos={todos} handleDelete={handleDelete} />
+            {todos.length === 0 ? (
+              <p>You dont have tasks, relax...</p>
+            ) : (
+              <TodoItem todos={todos} handleDelete={handleDelete} />
+            )}
           </ul>
         </div>
       </div>
