@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import TodoItem from '../TodoItem/TodoItem'
 import styles from './TodoList.module.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 interface Todo {
     id: number,
@@ -27,6 +30,9 @@ const handleAdd = () => {
         };
         const newTodos = [...todos, item]
         setTodos(newTodos)
+        toast.success('Task added', {
+          progressClassName: 'custom-toast-progress'
+        })
         setValue('')
 
         localStorage.setItem('todos', JSON.stringify(newTodos))
@@ -35,6 +41,9 @@ const handleAdd = () => {
 
 const handleDelete = (id: number) => {
     setTodos(todos.filter(todo => todo.id !== id))
+    toast.success('Task delete', {
+      progressClassName: 'custom-toast-progress'
+    })
 }
 
 const handleKeyDows = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -57,6 +66,13 @@ const handleKeyDows = (e: React.KeyboardEvent<HTMLInputElement>) => {
           <button className={styles.dltBtn} onClick={handleAdd}>
             Add
           </button>
+          <ToastContainer
+            position="top-right"
+            autoClose={1500}
+            hideProgressBar={true}
+            pauseOnHover={true}
+            closeButton={false}
+          />
 
           <ul>
             {todos.length === 0 ? (
